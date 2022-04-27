@@ -35,7 +35,9 @@ func GetUserByID(id int) (User, error) {
 			return *u, nil
 		}
 	}
+
 	return User{}, fmt.Errorf("User with ID '%v' not found", id)
+
 }
 
 func UpdateUser(u User) (User, error) {
@@ -45,6 +47,7 @@ func UpdateUser(u User) (User, error) {
 			return u, nil
 		}
 	}
+
 	return User{}, fmt.Errorf("User with ID '%v' not found", u.ID)
 }
 
@@ -55,5 +58,7 @@ func RemoveUserById(id int) error {
 			return nil
 		}
 	}
+
 	return fmt.Errorf("User with ID '%v' not found", id)
+
 }

@@ -75,6 +75,7 @@ func (uc *userController) post(w http.ResponseWriter, r *http.Request) {
 }
 
 func (uc *userController) put(id int, w http.ResponseWriter, r *http.Request) {
+
 	u, err := uc.parseRequest(r)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -93,6 +94,7 @@ func (uc *userController) put(id int, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	encodeResponseAsJSON(u, w)
+
 }
 
 func (uc *userController) delete(id int, w http.ResponseWriter) {
